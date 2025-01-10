@@ -500,6 +500,8 @@ small {
 /*******************
 		MY SKILLS SECTION
 *************************/
+/* Update the existing skills section CSS code */
+
 .my-skills {
 	margin-block-start: var(--section-mt);
 	padding: 4rem 1rem;
@@ -511,7 +513,6 @@ small {
 	grid-template-columns: repeat(4, 1fr);
 	gap: 3.2rem 1rem;
 }
-
 /*******************
 		PROJECTS SECTION
 *************************/
@@ -684,116 +685,138 @@ small {
 /*******************
 		EXPERIENCE SECTION
 *************************/
-/* Timeline Container */
+/* Experience Section Styling */
+.experience-section {
+    padding: 60px 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.experience-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.experience-section .subtitle {
+    font-size: 1.2rem;
+    color: #ccc; /* Light gray for subtitle */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.experience-section .title {
+    font-size: 2.5rem;
+    color: #fff; /* White for title */
+    margin-bottom: 20px;
+}
+
+.experience-section .info {
+    font-size: 1.1rem;
+    color: #aaa; /* Light gray for info */
+    margin-bottom: 40px;
+}
+
+/* Timeline Layout */
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 0;
 }
 
-/* Timeline Line */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 2px;
+    left:  50%;
     height: 100%;
-    background: #444; /* Darker line color */
+    width: 2px;
+    background-color: #fff; /* White line for timeline */
     transform: translateX(-50%);
 }
 
-/* Timeline Item */
 .timeline-item {
     position: relative;
-    width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effects */
 }
 
-/* Timeline Item Left */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
+.timeline-item:hover {
+    transform: translateY(-5px); /* 3D effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect on hover */
 }
 
-/* Timeline Item Right */
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-}
-
-/* Timeline Icon */
 .timeline-icon {
     position: absolute;
+    left: -30px; /* Positioning the icon */
     top: 20px;
-    width: 40px;
-    height: 40px;
-    background: #76ff98; /* LinkedIn blue */
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background-color: #fff; /* White background for icons */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 20px;
-    z-index: 1; /* Ensure the icon is above the line */
 }
 
-/* Timeline Content */
+.company-logo {
+    max-width: 80%; /* Responsive logo size */
+    max-height: 80%;
+}
+
 .timeline-content {
-    padding: 20px;
-    background: #2c2c2c; /* Dark background */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: #fff; /* White text for contrast */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 70px; /* Space for the icon */
 }
 
-/* Hover Effect for Timeline Content */
-.timeline-content:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+.company-name {
+    font-size: 1.5rem;
+    color: #fff; /* White for company name */
+    margin-bottom: 5px;
 }
 
-/* Timeline Date */
-.timeline-date {
-    font-size: 14px;
-    color: #bbb; /* Light gray for date */
-    margin-bottom: 10px;
+.term-worked {
+    font-size: 1rem;
+    color: #ccc; /* Light gray for term worked */
 }
 
-/* Timeline Item Left Positioning */
-.timeline-item:nth-child(odd) .timeline-icon {
-    right: -20px; /* Position icon to the right for odd items */
+.role {
+    font-size: 1rem;
+    color: #fff; /* White for role */
+}
+/* Remove the white line in the middle of the Experience section */
+.timeline::before {
+    content: none; /* Remove the white line */
+}
+/* Adjust the logo sizes and colors */
+/* Adjust the logo size for AISE logo */
+.aise-logo {
+    width: 35px; /* Adjust the logo size to fit within the circle */
+    height: 35px;
+    object-fit: contain; /* Ensure the logo is centered and scaled correctly */
 }
 
-/* Timeline Item Right Positioning */
-.timeline-item:nth-child(even) .timeline-icon {
-    left: -20px; /* Position icon to the left for even items */
-}
-.experience-section .container {
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    padding: 20px;
-    margin: 0 auto;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-}
-.experience-section .timeline-content {
-    word-wrap: break-word;
-    white-space: normal;
-}
-@media (max-width: 768px) {
-    .experience-section .container {
-        padding: 10px;
-    }
-    .experience-section .timeline-content {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
+
+
+/* Make the SSOSC logo black */
+/* Adjust the logo size for SSOSC logo */
+.ssosc-logo {
+    width: 40px; /* Adjust the logo size to fit within the circle */
+    height: 40px;
+    object-fit: contain; /* Ensure the logo is centered and scaled correctly */
+    filter: invert(100%); /* Invert the logo colors to make it black */
 }
 /*******************
 		Achievement SECTION
 *************************/
+
+.experience-section .title {
+    font-size: clamp(3.2rem, 3vw, 6rem); /* Match font size with other section headings */
+    color: #fff; /* White for title */
+    margin-bottom: 20px;
+}
 .achievements-section {
     padding: 60px 0;
     background: #000; /* Match the main website background color */
@@ -882,6 +905,107 @@ small {
 .mail-link:hover {
 	color: var(--accent-clr);
 	text-decoration: none;
+}
+/* Pop-up Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.popup-content {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.popup-content:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.close-btn:hover {
+    color: #ccc;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+}
+
+.popup-content textarea {
+    resize: vertical;
+}
+
+.send-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.send-btn:hover {
+    background-color: #444;
+}
+
+.popup-content input:focus,
+.popup-content textarea:focus {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.popup-content input:hover,
+.popup-content textarea:hover {
+    border-color: #ccc;
+    box-shadow: 0 0 10px rgba(204, 204, 204, 0.5);
 }
 
 /*******************
